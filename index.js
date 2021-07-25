@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const width = 10
   let currentIndex = 0 // so first div in our grid
   let appleIndex = 0 //so first div in our grid
-  let currentSnake = [2,1,0] //the head is 2; the tail is 0
+  let currentSnake = [2,1,0] 
 
   let direction = 1
   let score = 0
