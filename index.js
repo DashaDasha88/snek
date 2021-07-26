@@ -30,6 +30,20 @@ document.addEventListener('DOMContentLoaded', () => {
     interval = setInterval(moveOutcomes, intervalTime)
   }
 
+  //function that deals with all the over outcomes of the snake
+  function moveOutcomes() {
+
+    //deals with snake hitting border and snake hitting self
+    if (
+      (currentSnake[0] + width >= (width * width) && direction === width) || // if snake hits bottom
+      (currentSnake[0] % width === width -1 && direction === 1) || //if snake hits right wall
+      (currentSnake[0] % width === 0 && direction === -1) || //if snake hits left wall
+      (currentSnake[0] - width < 0 && direction === -width) //if snake hits the top
+      squares[currentSnake]
+    )
+
+  }
+
   //assign functions to keycodes
   function control (e) {
 
