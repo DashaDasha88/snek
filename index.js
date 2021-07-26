@@ -44,6 +44,10 @@ document.addEventListener('DOMContentLoaded', () => {
       return clearInterval(interval) //clear the interval if any of the above happens
     }
 
+    const tail = currentSnake.pop() //removes last item of the array and shows it
+    squares[tail].classList.remove('snake') //removes class of snake from the tail
+    currentSnake.unshift(currentSnake[0] + direction) //gives direction to the head of the array
+
   }
 
   //assign functions to keycodes
