@@ -48,7 +48,19 @@ document.addEventListener('DOMContentLoaded', () => {
     squares[tail].classList.remove('snake') //removes class of snake from the tail
     currentSnake.unshift(currentSnake[0] + direction) //gives direction to the head of the array
 
+    //snake getting apple
+    if(squares[currentSnake[0]].classList.contains('apple')) {
+      squares[currentSnake[0]].classList.remove('apple')
+      squares[tail].classList.add('snake')
+      currentSnake.push(tail)
+      //randomApple()
+      score++
+      scoreDisplay.textContent = score
+      clearInterval(interval)
+      intervalTime = intervalTime * speed
+      interval = setInterval(moveOutcomes, intervalTime)
   }
+  squares[currentSnake[0].classList.add('snake')]
 
   //assign functions to keycodes
   function control (e) {
